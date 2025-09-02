@@ -1,6 +1,6 @@
 SRCS =	src/Zombie.cpp\
 		src/main.cpp \
-		src/newZombie.cpp src/randomChump.cpp\
+		src/ZombieHorde.cpp
 		
 NAME = Brainzz
 

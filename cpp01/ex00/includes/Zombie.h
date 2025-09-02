@@ -3,7 +3,7 @@
 
 #include "../includes/Zombie.hpp"
 
-Zombie* newZombie(t_string name);
-void randomChump(t_string name);
+Zombie* newZombie(std::string name);
+void randomChump(std::string name);
 
 #endif

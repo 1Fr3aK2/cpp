@@ -1,8 +1,9 @@
-SRCS =	src/Zombie.cpp\
+SRCS =	src/Weapon.cpp\
 		src/main.cpp \
-		src/newZombie.cpp src/randomChump.cpp\
+		src/HumanA.cpp\
+		src/HumanB.cpp
 		
-NAME = Brainzz
+NAME = Violence
 
 COMPRESS = ar rcs
 
