@@ -5,31 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/02 16:26:38 by rafael            #+#    #+#             */
-/*   Updated: 2025/09/03 19:28:28 by rafael           ###   ########.fr       */
+/*   Created: 2025/09/03 21:08:17 by rafael            #+#    #+#             */
+/*   Updated: 2025/09/03 21:08:18 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <HumanA.hpp>
-#include <HumanB.hpp>
-#include <Weapon.hpp>
+#include <Harl.hpp>
 
-int	main(void)
+int main(int argc, char **argv)
 {
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-        Weapon club = Weapon("crude spiked club");
-        HumanB jim("Jim");
-        jim.setWeapon(club);
-        jim.attack();
-        club.setType("some other type of club");
-        jim.attack();
-	}
+    Harl harl;
+    
+    if (argc != 2)
+    {
+        std::cerr << "Invalid number of arguments !" << std::endl;
+        return (1);
+    }
+    for (int i = 1; i < argc; i++)
+        harl.complain(argv[i]);
     return (0);
 }

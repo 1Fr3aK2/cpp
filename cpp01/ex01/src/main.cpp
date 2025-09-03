@@ -6,11 +6,11 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 15:20:10 by rafael            #+#    #+#             */
-/*   Updated: 2025/09/02 15:34:32 by rafael           ###   ########.fr       */
+/*   Updated: 2025/09/03 19:29:10 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Zombie.hpp"
+#include <Zombie.hpp>
 
 int main()
 {

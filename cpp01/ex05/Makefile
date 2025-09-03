@@ -1,8 +1,7 @@
-SRCS =	src/Zombie.cpp\
-		src/main.cpp \
-		src/newZombie.cpp src/randomChump.cpp\
+SRCS =	src/main.cpp \
+		src/Harl.cpp\
 		
-NAME = Brainzz
+NAME = Harl
 
 COMPRESS = ar rcs
 
