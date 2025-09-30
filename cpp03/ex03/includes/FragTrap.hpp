@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 18:55:07 by rafael            #+#    #+#             */
-/*   Updated: 2025/09/29 22:53:45 by rafael           ###   ########.fr       */
+/*   Updated: 2025/09/30 00:02:40 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <ClapTrap.hpp>
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
     private:
 

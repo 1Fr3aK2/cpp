@@ -6,18 +6,18 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 18:54:58 by rafael            #+#    #+#             */
-/*   Updated: 2025/09/29 23:03:24 by rafael           ###   ########.fr       */
+/*   Updated: 2025/09/30 01:01:34 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <FragTrap.hpp>
+#include "FragTrap.hpp"
 
 FragTrap::FragTrap() : ClapTrap()
 {
     _HitPoints = 100;
     _EnergyPoints = 100;
     _AttackDamage = 30;
-     std::cout << "FragTrap default constructor called" << std::endl;
+    std::cout << "FragTrap default constructor called" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
@@ -26,7 +26,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
     _HitPoints = 100;
     _EnergyPoints = 100;
     _AttackDamage = 30;
-    std::cout << "FragTrap Name constructor called" << std::endl;
+    std::cout << "FragTrap name constructor called" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap& original) : ClapTrap(original)
@@ -37,7 +37,7 @@ FragTrap::FragTrap(const FragTrap& original) : ClapTrap(original)
 
 FragTrap::~FragTrap()
 {
-    std::cout << "FragTrap Destructor called" << std::endl;
+    std::cout << "FragTrap destructor called" << std::endl;
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &original)
@@ -52,11 +52,15 @@ FragTrap &FragTrap::operator=(const FragTrap &original)
     return (*this);
 }
 
-void FragTrap::attack(std::string const &target) {
-    std::cout << "FragTrap " << _name << " attacks " << target << ", causing " << _AttackDamage << " points of damage!" << std::endl;
+void FragTrap::attack(std::string const &target)
+{
+    std::cout << "FragTrap " << _name 
+              << " attacks " << target 
+              << ", causing " << _AttackDamage 
+              << " points of damage!" << std::endl;
 }
 
 void FragTrap::highFivesGuys(void)
 {
-    std::cout << "FragTrap" << _name << " requested an high-five!" << std::endl;
+    std::cout << "FragTrap " << _name << " requests a high five!" << std::endl;
 }

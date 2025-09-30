@@ -2,8 +2,9 @@ SRCS =  src/main.cpp \
 		src/ClapTrap.cpp\
 		src/ScavTrap.cpp\
 		src/FragTrap.cpp\
+		src/DiamondTrap.cpp\
 
-NAME = ex02
+NAME = ex03
 
 COMPRESS = ar rcs
 
@@ -11,7 +12,7 @@ RM = rm -f
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror -g -std=c++98 -I./includes
+CFLAGS = -Wall -Wextra -Werror -g -std=c++98 -I./includes -Wshadow -Wno-shadow
 
 OBJ_DIR = obj
 
