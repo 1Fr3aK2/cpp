@@ -5,7 +5,7 @@ SRCS =  src/main.cpp \
 		src/WrongCat.cpp\
 		src/WrongAnimal.cpp\
 
-NAME = ex00
+NAME = ex01
 
 COMPRESS = ar rcs
 

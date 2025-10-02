@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 00:01:59 by rafael            #+#    #+#             */
-/*   Updated: 2025/10/02 17:13:20 by rafael           ###   ########.fr       */
+/*   Created: 2025/09/30 23:57:00 by rafael            #+#    #+#             */
+/*   Updated: 2025/10/02 18:24:29 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef DOG_HPP
+#define DOG_HPP
+
 #include <Animal.hpp>
-#include <Cat.hpp>
-#include <Dog.hpp>
-#include <WrongAnimal.hpp>
-#include <WrongCat.hpp>
+#include <Brain.hpp>
 
-int main()
+class Dog : public Animal
 {
+    private:
+        Brain *brain;
+    public:
+        Dog();
+        Dog(const Dog& other);
+        ~Dog();
+        Dog& operator=(const Dog& other);
+        void makeSound() const;
+        Brain *getBrain() const;
+};
 
-}
+#endif

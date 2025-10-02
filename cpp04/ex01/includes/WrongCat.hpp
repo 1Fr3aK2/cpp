@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 00:01:59 by rafael            #+#    #+#             */
-/*   Updated: 2025/10/02 17:13:20 by rafael           ###   ########.fr       */
+/*   Created: 2025/10/02 02:26:22 by rafael            #+#    #+#             */
+/*   Updated: 2025/10/02 02:47:44 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Animal.hpp>
-#include <Cat.hpp>
-#include <Dog.hpp>
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
+
 #include <WrongAnimal.hpp>
-#include <WrongCat.hpp>
 
-int main()
+class WrongCat : public WrongAnimal
 {
+    private:
 
-}
+    public:
+        WrongCat();
+        ~WrongCat();
+        WrongCat(const WrongCat& other);
+        WrongCat &operator=(const WrongCat& other);
+        void makeSound() const;
+};
+
+
+#endif
