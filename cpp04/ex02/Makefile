@@ -1,5 +1,10 @@
 SRCS =  src/main.cpp \
-		src/ClapTrap.cpp\
+		src/Dog.cpp\
+		src/Cat.cpp\
+		src/Animal.cpp\
+		src/WrongCat.cpp\
+		src/WrongAnimal.cpp\
+		src/Brain.cpp\
 
 NAME = ex02
 

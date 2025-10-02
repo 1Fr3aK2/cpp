@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 02:26:22 by rafael            #+#    #+#             */
-/*   Updated: 2025/10/02 23:02:56 by rafael           ###   ########.fr       */
+/*   Updated: 2025/10/02 02:47:44 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class WrongCat : public WrongAnimal
         ~WrongCat();
         WrongCat(const WrongCat& other);
         WrongCat &operator=(const WrongCat& other);
-        virtual void makeSound() const;
+        void makeSound() const;
 };
 
 

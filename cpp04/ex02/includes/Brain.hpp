@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/02 02:23:08 by rafael            #+#    #+#             */
-/*   Updated: 2025/10/02 23:01:47 by rafael           ###   ########.fr       */
+/*   Created: 2025/10/02 17:14:09 by rafael            #+#    #+#             */
+/*   Updated: 2025/10/02 18:23:34 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
 #include <iostream>
 #include <string>
@@ -23,19 +23,18 @@
 #include <cmath>
 
 
-class WrongAnimal
+class Brain
 {
-    protected:
-        std::string _type;
+    private:
+        std::string ideas[100];
     public:
-        WrongAnimal();
-        WrongAnimal(const WrongAnimal& other);
-        WrongAnimal &operator=(const WrongAnimal& other);
-        virtual ~WrongAnimal();
-        std::string getType() const;
-        virtual void makeSound() const;
+        Brain();
+        Brain(const Brain& other);
+        Brain &operator=(const Brain& other);
+        ~Brain();
+        void setIdea(int index, std::string idea);
+        std::string getIdea(int index) const;
 };
-
 
 
 #endif
