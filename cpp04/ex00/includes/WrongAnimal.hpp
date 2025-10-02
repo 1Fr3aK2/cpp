@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 23:35:24 by rafael            #+#    #+#             */
+/*   Created: 2025/10/02 02:23:08 by rafael            #+#    #+#             */
 /*   Updated: 2025/10/02 02:47:44 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
 #include <iostream>
 #include <string>
@@ -22,17 +22,18 @@
 #include <sstream>
 #include <cmath>
 
-class Animal
+
+class WrongAnimal
 {
     protected:
         std::string _type;
     public:
-        Animal();
-        virtual ~Animal();
-        Animal(const Animal& other);
-        Animal& operator=(const Animal& other);
-        virtual void makeSound() const;
+        WrongAnimal();
+        WrongAnimal(const WrongAnimal& other);
+        WrongAnimal &operator=(const WrongAnimal& other);
+        virtual ~WrongAnimal();
         std::string getType() const;
+        void makeSound() const;
 };
 
 

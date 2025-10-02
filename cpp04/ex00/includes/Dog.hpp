@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 23:57:00 by rafael            #+#    #+#             */
-/*   Updated: 2025/09/30 23:59:21 by rafael           ###   ########.fr       */
+/*   Updated: 2025/10/02 02:47:44 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class Dog : public Animal
 
     public:
         Dog();
+        Dog(const Dog& other);
         ~Dog();
-        Dog(const Dog& original);
-        Dog& operator=(const Dog& original);
+        Dog& operator=(const Dog& other);
         void makeSound() const;
 };
 

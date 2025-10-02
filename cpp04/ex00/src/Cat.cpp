@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 23:35:24 by rafael            #+#    #+#             */
+/*   Created: 2025/10/02 01:11:42 by rafael            #+#    #+#             */
 /*   Updated: 2025/10/02 02:47:44 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#include <Cat.hpp>
 
-#include <iostream>
-#include <string>
-#include <cctype>
-#include <cstdlib>
-#include <iomanip>
-#include <fstream>
-#include <sstream>
-#include <cmath>
-
-class Animal
+Cat::Cat() : Animal()
 {
-    protected:
-        std::string _type;
-    public:
-        Animal();
-        virtual ~Animal();
-        Animal(const Animal& other);
-        Animal& operator=(const Animal& other);
-        virtual void makeSound() const;
-        std::string getType() const;
-};
+    this->_type = "Cat";
+    std::cout << "Default Cat constructor called" << std::endl;
+}
 
+Cat::Cat(const Cat& other) : Animal()
+{
+    *this = other;
+}
 
+Cat::~Cat()
+{
+    std::cout << "Cat destructor called" << std::endl;
+}
 
-#endif
+Cat &Cat::operator=(const Cat& other)
+{
+    if (this == &other)
+        return (*this);
+    this->Animal::operator=(other);
+    return (*this);
+}
+
+void Cat::makeSound() const
+{
+    std::cout << "Meow Meow Meow" << std::endl;
+}

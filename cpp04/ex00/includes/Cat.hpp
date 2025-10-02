@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 23:59:39 by rafael            #+#    #+#             */
-/*   Updated: 2025/10/01 00:01:48 by rafael           ###   ########.fr       */
+/*   Updated: 2025/10/02 02:47:44 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class Cat : public Animal
 
     public:
         Cat();
+        Cat(const Cat& other);
         ~Cat();
-        Cat(const Cat& original);
-        Cat& operator=(const Cat& original);
+        Cat& operator=(const Cat& other);
         void makeSound() const;
 };
 
