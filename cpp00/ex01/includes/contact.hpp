@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
+/*   By: raamorim <raamorim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 21:15:53 by rafael            #+#    #+#             */
-/*   Updated: 2025/08/31 10:34:52 by rafael           ###   ########.fr       */
+/*   Updated: 2025/10/08 17:15:51 by raamorim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,27 +18,27 @@
 class Contact
 {
     private:
-        t_string _first_name;
-        t_string _last_name;
-        t_string _nickname;
-        t_string _phone_number;
-        t_string _darkest_secret;
+        std::string  _first_name;
+        std::string  _last_name;
+        std::string  _nickname;
+        std::string  _phone_number;
+        std::string  _darkest_secret;
 
     public:
         Contact();
         ~Contact();
 
-        bool SetFirstName(t_string name);
-        bool SetLastName(t_string name);
-        bool SetNickname(t_string name);
-        bool SetPhoneNumber(t_string name);
-        bool SetDarkestSecret(t_string name);
+        bool SetFirstName(std::string  name);
+        bool SetLastName(std::string  name);
+        bool SetNickname(std::string  name);
+        bool SetPhoneNumber(std::string  name);
+        bool SetDarkestSecret(std::string  name);
 
-        t_string GetFirstName(void);
-        t_string GetLastName(void);
-        t_string GetNickname(void);
-        t_string GetPhoneNumber(void);
-        t_string GetDarkestSecret(void);
+        std::string  GetFirstName(void);
+        std::string  GetLastName(void);
+        std::string  GetNickname(void);
+        std::string  GetPhoneNumber(void);
+        std::string  GetDarkestSecret(void);
 
         void PrintContact(void);
 };

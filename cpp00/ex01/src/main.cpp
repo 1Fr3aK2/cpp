@@ -3,41 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
+/*   By: raamorim <raamorim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 23:01:04 by rafael            #+#    #+#             */
-/*   Updated: 2025/08/31 11:19:14 by rafael           ###   ########.fr       */
+/*   Created: 2025/10/08 17:33:46 by raamorim          #+#    #+#             */
+/*   Updated: 2025/10/08 17:33:47 by raamorim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/megaphone.hpp"
 
-void getteline(t_string &cmd)
+bool getteline(std::string &cmd)
 {
-    std::getline(std::cin, cmd);
-    if (std::cin.eof())
-    {
-        std::cout << "EOF, leaving ..." << std::endl;
-        exit(0);
-    }
+    if (!std::getline(std::cin, cmd))
+        return false;
+    return true;
 }
 
-void formatStr(t_string &input)
+void formatStr(std::string &input)
 {
-    for (int i = 0; i < (int)input.length(); i++)
+    for (size_t i = 0; i < input.length(); i++)
     {
         if (input[i] == '\t')
             input[i] = ' ';
     }
 }
 
-void getInput(t_string &input)
+bool getInput(std::string &input)
 {
-    getteline(input);
+    if (!getteline(input))
+        return false;
     if (input.empty())
+    {
         std::cout << "Input has to be valid" << std::endl;
-    else
-        formatStr(input);
+        return true;
+    }
+    formatStr(input);
+    return true;
 }
 
 int main(int argc, char **argv)
@@ -46,15 +47,19 @@ int main(int argc, char **argv)
     (void)argv;
 
     PhoneBook phonebook;
-    t_string cmd;
+    std::string cmd;
 
-    while (1)
+    while (true)
     {
         std::cout << "Enter a command: ";
-        getteline(cmd);
+        if (!getteline(cmd))
+        {
+            std::cout << "EOF, leaving ..." << std::endl;
+            break;
+        }
 
         if (cmd == "EXIT")
-                break;
+            break;
         else if (cmd == "ADD")
             phonebook.Add();
         else if (cmd == "SEARCH")

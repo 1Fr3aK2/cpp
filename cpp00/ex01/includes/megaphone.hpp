@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
+/*   By: raamorim <raamorim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 20:01:44 by rafael            #+#    #+#             */
-/*   Updated: 2025/08/31 11:13:55 by rafael           ###   ########.fr       */
+/*   Updated: 2025/10/08 17:26:39 by raamorim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,10 @@
 #include <cstdlib>
 #include <iomanip>
 
-typedef std::string t_string;
-
 #include "../includes/contact.hpp"
 #include "../includes/phonebook.hpp"
 
-void getInput(t_string &input);
-void formatStr(t_string &input);
-void getteline(t_string &cmd);
+bool getInput(std::string  &input);
+void formatStr(std::string  &input);
+bool getteline(std::string  &cmd);
 #endif
