@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
+/*   By: raamorim <raamorim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 17:29:24 by rafael            #+#    #+#             */
-/*   Updated: 2025/08/30 18:02:11 by rafael           ###   ########.fr       */
+/*   Updated: 2025/10/08 17:07:24 by raamorim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,12 @@ int main(int argc, char **argv)
     else
     {
         for (int i = 1; i < argc; i++)
+        {
             for (int j = 0; argv[i][j]; j++)
                 std::cout << (char)toupper(argv[i][j]);
+            if (argv[i + 1])
+                std::cout << " ";
+        }
         std::cout << std::endl;
     }
     return (0);
