@@ -1,0 +1,99 @@
+std::ifstream -> stream de entrada (input) ligado a um ficheiro. Usado para ler
+std::ofstream -> stream de saida (output) ligado a um ficheiro, usado para escrever
+std::fstream -> stream de leitura + escrita (abre para ambos);
+std::ostringstream / std::istringstream -> stream que le/escreve em memoria numa std::string (util para montar texto antes de gravar ou para parsing)
+
+
+
+std -> namespace (contem funcoes, calsses, tipos da biblioteca padrao);
+basic_string -> e um template da classe;
+std::string -> e um alias/typedef para std::basic_string ...., ou seja e um tipo(classe) promto a usar para texto com char;
+
+Resumo std = namespace; std::string = tipo/classe (especializacao do template);
+
+
+Class -> e um molde (modelo) que define como um tipo de objeto se comporta e o que contem
+    ela escreve :
+        Dados (atributos/variaveis) -> o que o objeto temp
+        Funcoes (metodos) -> o que objeto faz
+
+Resumo : uma class e uma fabrica que define como criar e usar objetos;
+
+type -> categoria de dado que indica:
+    que tipo de valor a variavel guarda (int, texto, etc)
+    que operacoes podem ser feitas com ela
+
+exemplos de type:
+    tipos primitivos: int, char, bool, float, double
+    ripos compostos (feitos por mim) : std::string, Pessoas ...
+
+Resumo: uma class e um molde e o tipo e o nome concreto usado para declarar variaveis 
+
+
+Template:
+    Forma de criar codigo generico-isto e, codigo que funciona com qualquer tipo
+
+Objeto:
+    um objeto e uma instancia(exemplo concreto de uma class)
+    class Pessoa
+
+    Pessoa p1 -> p1 e um objeto da classe pessoa
+
+
+
+CODIGO:
+
+process input -> Ela abre o ficheiro de entrada, lê tudo para a memória e prepara o ficheiro de saída.
+
+infile.open(filename.c_Str)
+    abre o ficheiro com o nome que recebemos
+    .c_str() -> tranforma a std::string em texto estilo c
+
+pprox verificacao -> se o ficheiro nao existe ou nao pode ser aberto mostra erro e devolve false
+
+std::cerr escreve no std error;
+
+out << infile.rdbuf() -> 
+    infile.rdbuf() -> devolve o buffer de leitura do ficheiro (tudo o que ha dentro dele)
+    out << infile.rdbuff() -> copia todo o contrudo do ficheiro para o objeto out, que guarda o texto em memoria;
+
+outfile.open((filename + ".replace").c_str());
+    -> Abre ou cria um novo ficheiro com o mesmo nome mas com.replace no final;
+
+Reaplceall -> esta funcao pega no texto e troca todas as vezes que aparece s1 por s2;
+
+content.find(s1, ctd) -> 
+    procura dentro de content onde esta a primeira vez que aparece s1, a partir da posicao ctd;
+
+    se find nao encontrar nada devolve std::string::npos -> significa nao encontrado
+
+
+
+substituicao real
+
+    content = content.substr(0, ctd) + s2 + content.substr(ctd + s1.length());
+        -> substr(0, ctd) -> tudo antes da palavra
+        -> s2 -> nova palavra 
+        ->substr(ctd + s1.length()) -> tudo depois da palavra antiga
+
+
+    depois o ctd incrementa a lenght de s2;
+
+
+
+processOutput 
+    pega no texto guardado em out
+    substitui todas as palvras s1 por s2
+    escreve o resultado em replace
+    fecha o ficheiro
+
+funcao main
+    std::ostringstream out;
+std::ifstream infile;
+std::ofstream outfile;
+    cria os instrumentos para ler(ifstrem) escrever(ofstream) e guardar memoria (ostringtream)
+
+if (!processInput(infile, outfile, filename, out))
+    return (1);
+-> abre o ficheiro e copia o texto, se falhar sai do programa
+    de seguida com o process output faz a substituicao e grava o novo texto.

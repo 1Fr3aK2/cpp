@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
+/*   By: raamorim <raamorim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 15:56:08 by rafael            #+#    #+#             */
-/*   Updated: 2025/09/02 16:12:50 by rafael           ###   ########.fr       */
+/*   Updated: 2025/10/10 15:27:52 by raamorim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
 
     std::cout << "Adresses:" << std::endl;
     std::cout << &name << std::endl;
-    std::cout << &ptr << std::endl;
+    std::cout << ptr << std::endl;
     std::cout << &ref << std::endl;
 
     std::cout << "Values:" << std::endl;
@@ -29,6 +29,4 @@ int main()
     std::cout << *ptr << std::endl;
     std::cout << ref << std::endl;
 
-
-    
 }
