@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
+/*   By: raamorim <raamorim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/06 16:43:59 by rafael            #+#    #+#             */
-/*   Updated: 2025/09/06 18:38:56 by rafael           ###   ########.fr       */
+/*   Updated: 2025/10/14 15:44:06 by raamorim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,22 @@ int	main(void)
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << Fixed::min( a, b ) << std::endl;
+
+	std::cout << "Operadores de comparacao" << std::endl;
+	std::cout << (a != b) << std::endl;
+	std::cout << (a == b) << std::endl;
+	std::cout << (a >= b) << std::endl;
+	std::cout << (a <= b) << std::endl;
+	std::cout << (a < b) << std::endl;
+	std::cout << (a > b) << std::endl;
+
+	std::cout << "Operadores aritmeticos" << std::endl;
+	std::cout << (a + b) << std::endl;
+	std::cout << (a - b) << std::endl;
+	std::cout << (a * b) << std::endl;
+	std::cout << (a / b) << std::endl;
+	
 	return (0);
 }

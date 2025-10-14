@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
+/*   By: raamorim <raamorim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/06 16:48:21 by rafael            #+#    #+#             */
-/*   Updated: 2025/09/06 18:31:15 by rafael           ###   ########.fr       */
+/*   Updated: 2025/10/14 15:35:02 by raamorim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,32 +92,32 @@ Fixed Fixed::operator/(const Fixed &copy) const
 
 bool Fixed::operator>(const Fixed &copy) const
 {
-    return (this->toFloat() > copy.toFloat());
+    return (this->_value > copy._value);
 }
 
 bool Fixed::operator<(const Fixed &copy) const
 {
-    return (this->toFloat() < copy.toFloat());    
+    return (this->_value < copy._value);    
 }
 
 bool Fixed::operator<=(const Fixed &copy) const
 {
-    return (this->toFloat() <= copy.toFloat());
+    return (this->_value <= copy._value);
 }
 
 bool Fixed::operator>=(const Fixed &copy) const
 {
-    return (this->toFloat() >= copy.toFloat());
+    return (this->_value >= copy._value);
 }
 
 bool Fixed::operator==(const Fixed &copy) const
 {
-    return (this->toFloat() == copy.toFloat());
+    return (this->_value == copy._value);
 }
 
 bool Fixed::operator!=(const Fixed &copy) const
 {
-    return (this->toFloat() != copy.toFloat());
+    return (this->_value != copy._value);
 }
 
 Fixed &Fixed::operator++() //pre
