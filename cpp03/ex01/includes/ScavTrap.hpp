@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 02:25:12 by rafael            #+#    #+#             */
-/*   Updated: 2025/09/29 02:54:52 by rafael           ###   ########.fr       */
+/*   Updated: 2025/10/15 01:45:07 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <ClapTrap.hpp>
 
 class ScavTrap : public ClapTrap
-{
+{   
     private:
     
     public:

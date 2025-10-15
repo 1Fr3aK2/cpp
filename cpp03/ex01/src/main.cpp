@@ -6,13 +6,14 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 02:23:46 by rafael            #+#    #+#             */
-/*   Updated: 2025/09/29 18:39:06 by rafael           ###   ########.fr       */
+/*   Updated: 2025/10/15 02:09:07 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ScavTrap.hpp>
 
-int main() {
+int	main(void)
+{
 	{
 		ScavTrap n1;
 		ScavTrap n2("Rafael");
@@ -59,5 +60,5 @@ int main() {
 		test.beRepaired(5);
 		test.guardGate();
 	}
-	return 0;
+	return (0);
 }
