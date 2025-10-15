@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 02:22:27 by rafael            #+#    #+#             */
-/*   Updated: 2025/10/02 02:47:44 by rafael           ###   ########.fr       */
+/*   Updated: 2025/10/15 20:48:30 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ WrongCat::WrongCat() : WrongAnimal()
 
 WrongCat::WrongCat(const WrongCat& other) : WrongAnimal()
 {
-    *this = other;
+    this->_type = other._type;
 }
 
 WrongCat &WrongCat::operator=(const WrongCat& other)

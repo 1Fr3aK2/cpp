@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 17:20:24 by rafael            #+#    #+#             */
-/*   Updated: 2025/10/02 18:13:40 by rafael           ###   ########.fr       */
+/*   Updated: 2025/10/15 20:51:05 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ Brain::Brain()
 
 Brain::Brain(const Brain& other)
 {
-    *this = other;
+    for (int i = 0; i < 100; i++)
+        this->ideas[i] = other.ideas[i];
 }
 
 Brain &Brain::operator=(const Brain& other)

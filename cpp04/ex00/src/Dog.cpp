@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 01:11:57 by rafael            #+#    #+#             */
-/*   Updated: 2025/10/02 02:47:44 by rafael           ###   ########.fr       */
+/*   Updated: 2025/10/15 20:47:59 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Dog::Dog() : Animal()
 
 Dog::Dog(const Dog& other) : Animal()
 {
-    *this = other;
+    this->_type = other._type;
 }
 
 Dog &Dog::operator=(const Dog& other)

@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 01:11:28 by rafael            #+#    #+#             */
-/*   Updated: 2025/10/02 02:47:44 by rafael           ###   ########.fr       */
+/*   Updated: 2025/10/15 20:49:02 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Animal::~Animal()
 
 Animal::Animal(const Animal& other)
 {
-    *this = other;
+    this->_type = other._type;
 }
 Animal &Animal::operator=(const Animal& other)
 {
