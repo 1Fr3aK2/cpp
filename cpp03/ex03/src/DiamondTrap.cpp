@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 23:33:46 by rafael            #+#    #+#             */
-/*   Updated: 2025/09/30 00:29:52 by rafael           ###   ########.fr       */
+/*   Updated: 2025/10/15 01:11:17 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,15 @@ DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name)
     std::cout << "DiamondTrap Name constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap& original) : ClapTrap(original), ScavTrap(original), FragTrap(original)
+DiamondTrap::DiamondTrap(const DiamondTrap& original)
+    : ClapTrap(original),
+      ScavTrap(original),
+      FragTrap(original),
+      _name(original._name)
 {
-    *this = original;
     std::cout << "DiamondTrap copy constructor called" << std::endl;
 }
+
 
 DiamondTrap::~DiamondTrap()
 {

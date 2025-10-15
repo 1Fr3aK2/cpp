@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 02:55:45 by rafael            #+#    #+#             */
-/*   Updated: 2025/09/29 18:47:59 by rafael           ###   ########.fr       */
+/*   Updated: 2025/10/15 00:33:33 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,11 @@ ClapTrap::ClapTrap(std::string name)
     std::cout << "ClapTrap Name constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& original)
+ClapTrap::ClapTrap(const ClapTrap& original) :_name(original._name), _HitPoints(original._HitPoints),
+      _EnergyPoints(original._EnergyPoints),
+      _AttackDamage(original._AttackDamage)
+
 {
-    *this = original;
     std::cout << "ClapTrap copy constructor called" << std::endl;
 }
 
