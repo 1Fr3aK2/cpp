@@ -3,33 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
+/*   By: raamorim <raamorim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 19:39:01 by rafael            #+#    #+#             */
-/*   Updated: 2025/11/01 03:33:12 by rafael           ###   ########.fr       */
+/*   Updated: 2025/11/03 16:26:03 by raamorim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Bureaucrat.hpp>
+#include <Form.hpp>
 
-int	main(void)
-{
-	Bureaucrat bur("Bur", 150);
-    std::cout << "bur " << bur.get_Name() << " has grade: " << bur.get_grade() << std::endl;
-    try
-    {
-        bur.incrementGrade(10);
-        std::cout << bur << std::endl;
-        bur.decrementGrade(100);
-        std::cout << bur << std::endl;  
-        Bureaucrat bura;
+int main() {
+	try {
+        Bureaucrat b("rafael", 2);
+        std::cout << b << std::endl;
 
-        bura = bur;
-        bura.incrementGrade(100);
-        std::cout << bura << std::endl;
+        Form f("Form1", 1, 1);
+        std::cout << f << std::endl;
+
+        b.signForm(f);
+        std::cout << f << std::endl;
+        std::cout << std::endl << "---------------------" << std::endl << std::endl;
+
+        Bureaucrat b2("Joao", 5);
+        std::cout << b2 << std::endl;
+
+        b2.signForm(f);
+        std::cout << f << std::endl;
+
+        std::cout << std::endl << "---------------------" << std::endl << std::endl;
+        Bureaucrat b3("duarte", 1);
+        std::cout << b3 << std::endl;
+
+        Form f2("Form2", 2, 2);
+        std::cout << f2 << std::endl;
+
+        b3.signForm(f2);
+        std::cout << f2 << std::endl;
+
+    } catch (std::exception &e) {
+        std::cout << e.what() << std::endl;
     }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+	return 0;
 }

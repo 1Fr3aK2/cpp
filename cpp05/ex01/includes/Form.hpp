@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
+/*   By: raamorim <raamorim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 03:15:52 by rafael            #+#    #+#             */
-/*   Updated: 2025/11/03 00:57:19 by rafael           ###   ########.fr       */
+/*   Updated: 2025/11/03 16:17:44 by raamorim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 #define FORM_HPP
 
 #include <iostream>
-#include "Bureaucrat.hpp"
+#include <Bureaucrat.hpp>
+
+class Bureaucrat;
 
 class Form
 {

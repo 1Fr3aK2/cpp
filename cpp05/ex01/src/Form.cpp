@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
+/*   By: raamorim <raamorim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 03:15:55 by rafael            #+#    #+#             */
-/*   Updated: 2025/11/03 02:45:03 by rafael           ###   ########.fr       */
+/*   Updated: 2025/11/03 16:20:20 by raamorim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Form.hpp>
 
-Form::Form() : _name("default"), _signed(false), _GradeToExec(150), _GradeToSign(150)
+Form::Form() : _name("default"), _signed(false), _GradeToSign(150), _GradeToExec(150)
 {
     std::cout << "Form default constructor called" << std::endl;
 }
@@ -22,7 +22,7 @@ Form::Form(const std::string &name, int gradetosign, int gradetoexec) : _name(na
     std::cout << "Form constructor called" << std::endl;
 }
 
-Form::Form(const Form &other) : _name(other._name), _signed(other._signed), _GradeToExec(other._GradeToExec), _GradeToSign(other._GradeToSign)
+Form::Form(const Form &other) : _name(other._name), _signed(other._signed), _GradeToSign(other._GradeToSign), _GradeToExec(other._GradeToExec)
 {   
     std::cout << "Form copy constructor called" << std::endl;
 }
@@ -41,7 +41,7 @@ Form &Form::operator=(const Form &other)
 }
 void Form::beSigned(const Bureaucrat &bureaucrat)
 {
-    if(bureaucrat.get_grade() > _GradeToSign)
+    if (bureaucrat.get_grade() > _GradeToSign)
         throw Form::GradeTooHighException();
     _signed = true;
     std::cout << bureaucrat.get_Name() << " signed " << _name << std::endl;
@@ -77,3 +77,8 @@ const char * Form::GradeTooLowException::what() const throw()
     return ("Exception: Grade is to low\n");
 }
 
+std::ostream &operator<<(std::ostream &out, const Form &Form)
+{
+    out << Form.get_Name() << ", Form grade to sign: " << Form.get_GradeToSign() << ", Form grade to exec: " << Form.get_GradeToExec() << ", Signed: " << Form.is_Signed();
+	return (out);
+}
