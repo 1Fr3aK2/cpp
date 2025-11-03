@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 03:15:52 by rafael            #+#    #+#             */
-/*   Updated: 2025/11/01 03:58:34 by rafael           ###   ########.fr       */
+/*   Updated: 2025/11/03 00:57:19 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class Form
         Form();
         Form(const std::string &name, int gradetosign, int gradetoexec);
         Form(const Form &other);
-        Form& operator=(const Form& other);
         ~Form();
+        Form& operator=(const Form& other);
         void beSigned(const Bureaucrat &bureaucrat);
         std::string get_Name() const;
         bool is_Signed() const;
