@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:41:54 by raamorim          #+#    #+#             */
-/*   Updated: 2025/11/06 23:24:26 by rafael           ###   ########.fr       */
+/*   Updated: 2025/11/06 23:20:11 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class RobotomyRequestForm : public AForm
         ~RobotomyRequestForm();
         RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
         void execute(const Bureaucrat &executor) const;
-
+        static AForm* create(const std::string &target);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 19:39:01 by rafael            #+#    #+#             */
-/*   Updated: 2025/11/06 21:52:10 by rafael           ###   ########.fr       */
+/*   Updated: 2025/11/06 23:26:39 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,15 @@
 int main() {
 	try
 	{
-		// Create bureaucrats
+		
 		Bureaucrat highLevel("High Level", 1);
 		Bureaucrat midLevel("Mid Level", 70);
-		Bureaucrat lowLevel("Low Level", 1357);
+		Bureaucrat lowLevel("Low Level", 135);
 
-		// Create forms
 		ShrubberyCreationForm shrubberyForm("Home");
 		RobotomyRequestForm robotomyForm("Employee");
 		PresidentialPardonForm pardonForm("Criminal");
 
-		// Test high level bureaucrat
 		highLevel.signAForm(shrubberyForm);
 		highLevel.executeForm(shrubberyForm);
 		highLevel.signAForm(robotomyForm);
@@ -37,7 +35,6 @@ int main() {
 		highLevel.signAForm(pardonForm);
 		highLevel.executeForm(pardonForm);
 
-		// Test mid level bureaucrat
 		std::cout << "\nTesting mid level bureaucrat:" << std::endl;
 		midLevel.signAForm(shrubberyForm);
 		midLevel.executeForm(shrubberyForm);
@@ -46,7 +43,7 @@ int main() {
 		midLevel.signAForm(pardonForm);
 		midLevel.executeForm(pardonForm);
 
-		// Test low level bureaucrat
+		
 		std::cout << "\nTesting low level bureaucrat:" << std::endl;
 		lowLevel.signAForm(shrubberyForm);
 		lowLevel.executeForm(shrubberyForm);

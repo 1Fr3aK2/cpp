@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raamorim <raamorim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 03:15:55 by rafael            #+#    #+#             */
-/*   Updated: 2025/11/03 16:20:20 by raamorim         ###   ########.fr       */
+/*   Updated: 2025/11/06 21:48:13 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,11 @@ Form &Form::operator=(const Form &other)
         _signed = other._signed;
     return (*this);
 }
+
 void Form::beSigned(const Bureaucrat &bureaucrat)
 {
     if (bureaucrat.get_grade() > _GradeToSign)
-        throw Form::GradeTooHighException();
+        throw Form::GradeTooLowException();
     _signed = true;
     std::cout << bureaucrat.get_Name() << " signed " << _name << std::endl;
 }
@@ -69,12 +70,12 @@ int Form::get_GradeToExec() const
 
 const char * Form::GradeTooHighException::what() const throw()
 {
-    return ("Exception: Grade is to high\n");
+    return ("Exception: Grade is to high");
 }
 
 const char * Form::GradeTooLowException::what() const throw()
 {
-    return ("Exception: Grade is to low\n");
+    return ("Exception: Grade is to low");
 }
 
 std::ostream &operator<<(std::ostream &out, const Form &Form)

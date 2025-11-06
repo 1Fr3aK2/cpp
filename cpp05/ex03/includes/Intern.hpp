@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 18:41:54 by raamorim          #+#    #+#             */
-/*   Updated: 2025/11/06 23:24:26 by rafael           ###   ########.fr       */
+/*   Created: 2025/11/06 22:01:46 by rafael            #+#    #+#             */
+/*   Updated: 2025/11/06 23:18:11 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-#define ROBOTOMYREQUESTFORM_HPP
+#ifndef INTERN_HPP
+#define INTERN_HPP
 
 #include <AForm.hpp>
-#include <ctime>
 
-class RobotomyRequestForm : public AForm
+class Intern
 {
     private:
-        std::string _target;
+        static AForm*(*Constructors[3])(const std::string &target);
+        static std::string Names[3];
     public:
-        RobotomyRequestForm();
-        RobotomyRequestForm(std::string target);
-        RobotomyRequestForm(const RobotomyRequestForm &other);
-        ~RobotomyRequestForm();
-        RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
-        void execute(const Bureaucrat &executor) const;
+        Intern();
+        Intern(const Intern &other);
+        ~Intern();
+        Intern &operator=(const Intern &other);
+        AForm *makeform(std::string name, std::string target);
 
+        class FormNotFoundException : public std::exception {
+			public:
+				virtual const char* what() const throw();
+		};
 };
 
 #endif

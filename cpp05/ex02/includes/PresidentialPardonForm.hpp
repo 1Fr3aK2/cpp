@@ -6,12 +6,12 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:41:57 by raamorim          #+#    #+#             */
-/*   Updated: 2025/11/06 04:25:58 by rafael           ###   ########.fr       */
+/*   Updated: 2025/11/06 23:24:12 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PresidentialPardonForm_hpp
-#define PresidentialPardonForm_hpp
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
 
 #include <AForm.hpp>
 
