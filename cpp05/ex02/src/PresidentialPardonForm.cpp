@@ -3,11 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raamorim <raamorim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:40:29 by raamorim          #+#    #+#             */
-/*   Updated: 2025/11/05 19:46:29 by raamorim         ###   ########.fr       */
+/*   Updated: 2025/11/06 04:42:16 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <PresidentialPardonForm.hpp>
+
+PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5), _target("default")
+{
+    std::cout << "Default PresidentialPardonForm constructor called." << std::endl;
+}
+
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm",
+	25, 5), _target(target)
+{
+	std::cout << "PresidentialPardonForm constructor called." << std::endl;
+}
+
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other) : AForm("Presidential Pardon Form",
+	25, 5), _target(other._target)
+{
+    
+    std::cout << "PresidentialPardonForm copy constructor called." << std::endl;
+}
+
+PresidentialPardonForm::~PresidentialPardonForm()
+{
+    std::cout << "PresidentialPardonForm destructor called." << std::endl;
+}
+
+PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm& other)
+{
+    std::cout << "PresidentialPardonForm assignment operator called." << std::endl;
+    if (this != &other)
+        _target = other._target;
+    AForm::operator=(other);
+    return (*this);
+}

@@ -1,6 +1,7 @@
 SRCS =  src/main.cpp \
 		src/Bureaucrat.cpp\
-		src/AForm.cpp
+		src/AForm.cpp\ç
+		src/PresidentialPardomForm.cpp\
 
 NAME = ex02
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raamorim <raamorim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:41:57 by raamorim          #+#    #+#             */
-/*   Updated: 2025/11/05 19:45:59 by raamorim         ###   ########.fr       */
+/*   Updated: 2025/11/06 04:25:58 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class PresidentialPardonForm : public AForm
         std::string _target;
     public:
         PresidentialPardonForm();
-        PresidentialPardonForm(const std::string &target);
+        PresidentialPardonForm(std::string target);
         PresidentialPardonForm(const PresidentialPardonForm &other);
         ~PresidentialPardonForm();
         PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
