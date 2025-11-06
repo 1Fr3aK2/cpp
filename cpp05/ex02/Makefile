@@ -1,7 +1,9 @@
 SRCS =  src/main.cpp \
 		src/Bureaucrat.cpp\
-		src/AForm.cpp\ç
-		src/PresidentialPardomForm.cpp\
+		src/Form.cpp\
+		src/PresidentialPardonForm.cpp\
+		src/RobotomyRequestForm.cpp\
+		src/ShrubberyCreationForm.cpp\
 
 NAME = ex02
 

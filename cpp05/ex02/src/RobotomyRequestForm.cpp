@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:40:31 by raamorim          #+#    #+#             */
-/*   Updated: 2025/11/06 04:43:15 by rafael           ###   ########.fr       */
+/*   Updated: 2025/11/06 21:33:52 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,15 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm& o
         _target = other._target;
     AForm::operator=(other);
     return (*this);
+}
+
+void RobotomyRequestForm::execute(Bureaucrat const &executor) const
+{
+    this->check_execution(executor);
+    std::srand(std::time(0));
+    std::cout << "zzzzttt... hydraulic pressure stable... engaging drill!" << std::endl;
+    if (std::rand() % 2)
+        std::cout << _target << " has been robotomized successfully." << std::endl;
+    else
+        std::cout << _target << " robotomization failed." << std::endl;    
 }

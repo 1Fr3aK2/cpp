@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:41:54 by raamorim          #+#    #+#             */
-/*   Updated: 2025/11/06 04:40:54 by rafael           ###   ########.fr       */
+/*   Updated: 2025/11/06 21:34:58 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define RobotomyRequestForm_hpp
 
 #include <AForm.hpp>
+#include <ctime>
 
 class RobotomyRequestForm : public AForm
 {

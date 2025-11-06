@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:41:52 by raamorim          #+#    #+#             */
-/*   Updated: 2025/11/06 04:41:05 by rafael           ###   ########.fr       */
+/*   Updated: 2025/11/06 21:03:44 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,11 @@ class ShrubberyCreationForm : public AForm
         ~ShrubberyCreationForm();
         ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
         void execute(const Bureaucrat &executor) const;
-
+        class FileCantOpenException : public std::exception
+        {
+            public:
+                const char *what() const throw();
+        };
 };
 
 

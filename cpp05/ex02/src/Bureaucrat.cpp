@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raamorim <raamorim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 16:21:33 by raamorim          #+#    #+#             */
-/*   Updated: 2025/11/05 18:37:47 by raamorim         ###   ########.fr       */
+/*   Updated: 2025/11/06 21:48:07 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,19 +89,32 @@ void Bureaucrat::signAForm(AForm &AForm)
     }
     catch(const std::exception& e)
     {
-        std::cout << _name << " couldn't sign " << AForm.get_Name() << " because " << e.what() << std::endl;
+        std::cout << _name << " couldn't sign " << AForm.get_Name() << "because " << e.what() << std::endl;
+    }    
+}
+
+void Bureaucrat::executeForm(class AForm const &form)
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << _name << " executed " << form.get_Name() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << _name << " couldn't execute " << form.get_Name() << "because" << e.what() << std::endl;
     }
     
 }
 
 const char * Bureaucrat::GradeTooHighException::what() const throw()
 {
-    return ("Exception: Grade is to high\n");
+    return ("Exception: Grade is to high");
 }
 
 const char * Bureaucrat::GradeTooLowException::what() const throw()
 {
-    return ("Exception: Grade is to low\n");
+    return ("Exception: Grade is to low");
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)

@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:40:29 by raamorim          #+#    #+#             */
-/*   Updated: 2025/11/06 04:42:16 by rafael           ###   ########.fr       */
+/*   Updated: 2025/11/06 20:40:24 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,10 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
         _target = other._target;
     AForm::operator=(other);
     return (*this);
+}
+
+void PresidentialPardonForm::execute(const Bureaucrat &executor) const
+{
+    this->check_execution(executor);
+    std::cout << _target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }
