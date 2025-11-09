@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 16:43:31 by rafael            #+#    #+#             */
-/*   Updated: 2025/11/08 17:09:31 by rafael           ###   ########.fr       */
+/*   Updated: 2025/11/09 03:50:44 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,22 @@ bool is_signal(const char &a)
     return ((a == '-' || a == '+'));
 }
 
-bool is_Int(const std::string &string)
+
+bool is_Float(const std::string &string)
 {
-    std::cout << string << std::endl;
     if (string.empty())
         return false;
-    int i = 0;
-    for (; is_space(string[i]); i++)
-        ;
-    if (is_signal(string[i]))
-        i++;
-    if (!string[i])
+    if (string.find('.') == string.npos)
         return false;
-    for (int i = 1; string[i]; i++)
-    {
-        if (!isdigit(string[i]))
-            return (false);   
-    }
-    return (true);
+    char lastchar = string[string.length() - 1];
+    if (lastchar != 'f' && lastchar != 'F')
+        return false;
+    std::string string_to_convert = string.substr(0, string.length() - 1);
+    char *final;
+    strtod(string_to_convert.c_str(), &final);
+    if (*final != '\0')
+        return false;
+    return true;
 }
 
 int main(int argc, char **argv)
@@ -50,7 +48,7 @@ int main(int argc, char **argv)
         std::cout << "fck u" << std::endl;
         return 1;
     }
-    if (is_Int(argv[1]))
+    if (is_Float(argv[1]))
         std::cout << "is an integer" << std::endl;
     else
         std::cout << "isn't an integer" << std::endl;

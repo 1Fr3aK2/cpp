@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 01:51:02 by rafael            #+#    #+#             */
-/*   Updated: 2025/11/08 16:48:54 by rafael           ###   ########.fr       */
+/*   Updated: 2025/11/09 03:48:54 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other)
     return (*this);
 }
 
+bool is_space(const char &c)
+{
+    return ((c <= 9 && c <= 13) || c == 32);
+}
+
 bool is_Char(const std::string &string)
 {
     if (string.empty())
@@ -50,21 +55,36 @@ bool is_Int(const std::string &string)
 {
     if (string.empty())
         return false;
-    for (int i = 0; string[i]; i++)
+    int i = 0;
+    for (; is_space(string[i]); i++)
+        ;
+    if (string[i] == '+' || string[i] == '-')
+        i++;
+    if (!string[i])
+        return false;
+    for (; string[i]; i++)
     {
-        if (is_signal(string[i]) && ((!string[i + 1]) || is_signal(string[i + 1] || !isdigit(string[i + 1]))))
-            return false;
-        else if (isdigit(string[i]) && is_signal(string[i + 1]))
-            return false;       
+        if (!isdigit(string[i]))
+            return false;   
     }
-    return (true);
+    return true;
 }
 
 bool is_Float(const std::string &string)
 {
     if (string.empty())
         return false;
-    
+    if (string.find('.') == string.npos)
+        return false;
+    char lastchar = string[string.length() - 1];
+    if (lastchar != 'f' && lastchar != 'F')
+        return false;
+    std::string string_to_convert = string.substr(0, string.length() - 1);
+    char *final;
+    strtod(string_to_convert.c_str(), &final);
+    if (*final != '\0')
+        return false;
+    return true;
 }
 
 bool is_Double(const std::string &string)
@@ -76,4 +96,12 @@ bool is_Double(const std::string &string)
 bool is_signal(const char &a)
 {
     return ((a == '-' || a == '+'));
+}
+
+bool has_f(const std::string &string)
+{
+    if (string.empty())
+        return false;
+    
+    
 }
