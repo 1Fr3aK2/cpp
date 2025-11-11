@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 01:51:02 by rafael            #+#    #+#             */
-/*   Updated: 2025/11/09 03:48:54 by rafael           ###   ########.fr       */
+/*   Updated: 2025/11/11 04:11:14 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,11 @@ bool is_Double(const std::string &string)
 {
     if (string.empty())
         return false;
+    char *end;
+    strtod(string.c_str(), &end);
+    if (string.find('.') == string.npos)
+        return false;
+    return (*end != '\0' && end != string.c_str());
 }
 
 bool is_signal(const char &a)
@@ -98,10 +103,44 @@ bool is_signal(const char &a)
     return ((a == '-' || a == '+'));
 }
 
-bool has_f(const std::string &string)
+void toChar(std::string &string)
 {
     if (string.empty())
-        return false;
+        return ;
+    if (isprint(string[0]))
+        std::cout << "char: " << string[0] <<  "'" << std::endl;
+    else
+        std::cout << "char is not displayable" << std::endl;
+    int number = static_cast<int>(string[0]);
+    std::cout << "int: " << number << std::endl;
+    float number2 = static_cast<float>(string[0]);
+    std::cout << "float: " << number2 << "f" << std::endl;
+    double number3 = static_cast<double>(string[0]);
+    std::cout << "double: " << number3 << std::endl;    
+}
+
+void toDouble(std::string &string)
+{
+    if (string.empty())
+        return ;
     
-    
+}
+
+
+void ScalarConverter::convert(std::string str)
+{
+    if (str.empty())
+        return ;
+    if (is_Char(str))
+        toChar(str);
+    else if (is_Double(str))
+        toDouble();
+    else if (is_Float(str))
+        toFloat();
+    else if (is_Int(str))
+        toInt();
+    else if (is_pliteral(str))
+        toPliteral();
+    else
+        return ;
 }
