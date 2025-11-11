@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
+/*   By: raamorim <raamorim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 16:43:31 by rafael            #+#    #+#             */
-/*   Updated: 2025/11/09 03:50:44 by rafael           ###   ########.fr       */
+/*   Updated: 2025/11/11 16:53:03 by raamorim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,31 @@ bool is_signal(const char &a)
 }
 
 
-bool is_Float(const std::string &string)
+bool is_Char(const std::string &string)
 {
     if (string.empty())
         return false;
-    if (string.find('.') == string.npos)
+    if (string.length() != 1)
         return false;
-    char lastchar = string[string.length() - 1];
-    if (lastchar != 'f' && lastchar != 'F')
-        return false;
-    std::string string_to_convert = string.substr(0, string.length() - 1);
-    char *final;
-    strtod(string_to_convert.c_str(), &final);
-    if (*final != '\0')
-        return false;
-    return true;
+    if (isdigit(string[0]))
+        return true;
+    return false;
+}
+
+void toChar(std::string &string)
+{
+    if (string.empty())
+        return ;
+    if (isprint(string[0]))
+        std::cout << "char: " << string[0] << std::endl;
+    else
+        std::cout << "char is not displayable" << std::endl;
+    int number = static_cast<int>(string[0]);
+    std::cout << "int: " << number << std::endl;
+    float number2 = static_cast<float>(string[0]);
+    std::cout << "float: " << number2 << "f" << std::endl;
+    double number3 = static_cast<double>(string[0]);
+    std::cout << "double: " << number3 << std::endl;    
 }
 
 int main(int argc, char **argv)
@@ -48,9 +58,13 @@ int main(int argc, char **argv)
         std::cout << "fck u" << std::endl;
         return 1;
     }
-    if (is_Float(argv[1]))
-        std::cout << "is an integer" << std::endl;
+
+    std::string arg(argv[1]);  // Convert C-string to std::string
+
+    if (is_Char(arg.c_str()))  // assuming is_Char expects char*
+        toChar(arg);
     else
         std::cout << "isn't an integer" << std::endl;
-    return 1;
+
+    return 0;
 }

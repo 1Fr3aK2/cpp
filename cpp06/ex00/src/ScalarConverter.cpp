@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
+/*   By: raamorim <raamorim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 01:51:02 by rafael            #+#    #+#             */
-/*   Updated: 2025/11/11 04:11:14 by rafael           ###   ########.fr       */
+/*   Updated: 2025/11/11 17:21:14 by raamorim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,14 @@ bool is_Double(const std::string &string)
     return (*end != '\0' && end != string.c_str());
 }
 
+bool is_Pliteral(std::string &string)
+{
+    if (string.empty())
+        return (false);
+    if (string == "+inff" || string == "-inff" || string == "nan" || string == "nanf")
+        return true;
+    return false;
+}
 bool is_signal(const char &a)
 {
     return ((a == '-' || a == '+'));
@@ -126,7 +134,6 @@ void toDouble(std::string &string)
     
 }
 
-
 void ScalarConverter::convert(std::string str)
 {
     if (str.empty())
@@ -139,7 +146,7 @@ void ScalarConverter::convert(std::string str)
         toFloat();
     else if (is_Int(str))
         toInt();
-    else if (is_pliteral(str))
+    else if (is_Pliteral(str))
         toPliteral();
     else
         return ;
