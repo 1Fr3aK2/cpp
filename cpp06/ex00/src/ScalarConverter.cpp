@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raamorim <raamorim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 01:51:02 by rafael            #+#    #+#             */
-/*   Updated: 2025/11/11 17:21:14 by raamorim         ###   ########.fr       */
+/*   Updated: 2025/11/11 23:01:22 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,6 +131,30 @@ void toDouble(std::string &string)
 {
     if (string.empty())
         return ;
+    try
+    {
+        if (string.find('-') != string.npos && string.length() > 9)
+            throw std::exception();
+        else if  (string.find('-') == string.npos && string.length() > 8)
+            throw std::exception();
+        double nb = std::atof(string.c_str());
+        if (nb > 255 && nb > -1 && std::isprint(nb))
+            std::cout << "char: " << static_cast<char>(nb) << std::endl;
+        else if (nb >= 0 && nb <= 127)
+            std::cout << "char: Non displayable" << std::endl;
+        else
+            std::cout << "char: impossible" << std::endl;
+        std::cout << "int: " << static_cast<int>(nb) << std::endl;
+		std::cout << "float: " << static_cast<float>(nb) << "f" << std::endl;
+		std::cout << "double: " << nb << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << "char: " << "impossible" << std::endl;
+		std::cout << "int: " << "impossible" << std::endl;
+		std::cout << "float: " << "nanf" << std::endl;
+		std::cout << "double: " << "nan" << std::endl;
+    }
     
 }
 
@@ -141,13 +165,13 @@ void ScalarConverter::convert(std::string str)
     if (is_Char(str))
         toChar(str);
     else if (is_Double(str))
-        toDouble();
+        toDouble(str);
     else if (is_Float(str))
-        toFloat();
+        toFloat(str);
     else if (is_Int(str))
-        toInt();
+        toInt(str);
     else if (is_Pliteral(str))
-        toPliteral();
+        toPliteral(str);
     else
         return ;
 }
