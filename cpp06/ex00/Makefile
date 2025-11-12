@@ -1,5 +1,5 @@
 SRCS =  src/main.cpp \
-		#src/Scalarconverter.cpp\
+		src/ScalarConverter.cpp\
 
 NAME = ex00
 
