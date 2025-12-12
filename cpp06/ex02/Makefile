@@ -1,7 +1,7 @@
 SRCS =  src/main.cpp \
 		src/Base.cpp\
 
-NAME = ex01
+NAME = ex02
 
 COMPRESS = ar rcs
 
