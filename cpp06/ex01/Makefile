@@ -1,7 +1,7 @@
 SRCS =  src/main.cpp \
 		src/Serializer.cpp\
 
-NAME = ex02
+NAME = ex01
 
 COMPRESS = ar rcs
 
