@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
+/*   By: raamorim <raamorim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 18:20:24 by rafael            #+#    #+#             */
-/*   Updated: 2025/11/12 18:50:20 by rafael           ###   ########.fr       */
+/*   Updated: 2026/01/08 13:48:08 by raamorim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,10 @@ class MutantStack : public std::stack<T>
         MutantStack() : std::stack<T>()
         {
             std::cout << "MutantStack default constructor called" << std::endl;
+        }
+        MutantStack(const MutantStack &other) : std::stack<T>(other) 
+        {
+            std::count << "Copy constructor called" << std::endl;
         }
         MutantStack &operator=(const MutantStack &other)
         {
