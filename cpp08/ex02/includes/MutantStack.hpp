@@ -6,7 +6,7 @@
 /*   By: raamorim <raamorim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 18:20:24 by rafael            #+#    #+#             */
-/*   Updated: 2026/01/08 13:48:08 by raamorim         ###   ########.fr       */
+/*   Updated: 2026/01/08 15:20:33 by raamorim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,11 @@ class MutantStack : public std::stack<T>
         {
             return (this->c.end());
         }
-        const iterator begin() const
+        const_iterator begin() const
         {
             return (this->c.begin());
         }
-        const iterator end() const
+        const_iterator end() const
         {
             return (this->c.end());
         }
