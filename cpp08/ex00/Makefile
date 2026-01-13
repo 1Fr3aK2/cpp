@@ -1,4 +1,5 @@
-SRCS =  src/main.cpp 
+SRCS =  src/main.cpp \
+		src/easyfind.cpp
 
 NAME = ex00
 

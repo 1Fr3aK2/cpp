@@ -6,7 +6,7 @@
 /*   By: rafael <rafael@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 15:22:11 by rafael            #+#    #+#             */
-/*   Updated: 2025/11/12 17:01:46 by rafael           ###   ########.fr       */
+/*   Updated: 2026/01/12 23:40:07 by rafael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,15 @@
 #include <vector>
 #include <list>
 #include <exception>
+
+class EasyFind
+{
+    public:
+        EasyFind();
+        EasyFind(const EasyFind &copy);
+        EasyFind &operator=(const EasyFind &src);
+        ~EasyFind();
+};
 
 template <typename T>
 int easyfind(T container, int nb)
