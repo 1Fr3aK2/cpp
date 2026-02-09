@@ -1,7 +1,8 @@
 SRCS =  src/main.cpp \
+		src/BitcoinExchange.cpp 
 		
 
-NAME = ex00
+NAME = btc
 
 COMPRESS = ar rcs
 
