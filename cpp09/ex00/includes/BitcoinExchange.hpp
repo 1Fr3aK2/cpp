@@ -23,7 +23,7 @@ class BitcoinExchange
         BitcoinExchange& operator=(const BitcoinExchange& obj);
         
         void loadDb(const std::string& file);
-
+        void processInput(const std::string& filename);
         ~BitcoinExchange();
 
 };

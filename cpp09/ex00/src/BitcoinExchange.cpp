@@ -65,9 +65,60 @@ static bool isValidDate(const std::string& date)
     int monthDay = days[month - 1];
     if (month == 2 && (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)))
 		monthDay = 29;
-    return (day <= 1 && day <= monthDay);
+    return (day >= 1 && day <= monthDay);
 }
 
+void BitcoinExchange::processInput(const std::string& filename)
+{
+    size_t pipe;
+
+    std::ifstream file(filename.c_str());
+    if (!file.is_open())
+        throw std::runtime_error("Error opening file: " + filename);
+    file.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::string str;
+    while(std::getline(file, str))
+    {
+        pipe = str.find("|");
+        if (pipe == std::string::npos)
+        {
+            std::cerr << "Error: bad input => " << str << std::endl;
+            continue;
+        }
+        std::string date = str.substr(0, pipe);
+        std::string value = str.substr(pipe + 1);
+        date = trim(date);
+        value = trim(value);
+        if (date.empty() || value.empty())
+        {
+            std::cerr << "Error: bad input => " << str << std::endl;
+            continue;
+        }
+        if (!isValidDate(date))
+        {
+            std::cerr << "Error: bad input => " << str << std::endl;
+            continue;
+        }
+        double val = atof(value.c_str());
+        if (val < 0)
+        {
+            std::cerr << "Error: not a positive number" << std::endl;
+            continue;
+        }
+        if (val > 1000)
+        {
+            std::cerr << "Error: too large a number" << std::endl;
+            continue;
+        }
+        std::map<std::string, double>::iterator iter = dB.upper_bound(date);
+        if (iter == dB.begin())
+            std::cerr << "Error: no exchange rate found for => " << date << std::endl;
+        --iter;
+        double rate = iter->second;
+        double result = val * rate;
+        std::cout << date << " => " << val << " = " << result << std::endl; 
+    }
+}
 
 BitcoinExchange::~BitcoinExchange() {}
 

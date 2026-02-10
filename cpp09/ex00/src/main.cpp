@@ -10,7 +10,9 @@ int	main(int argc, char **argv)
 	}
     try
     {
-        
+        BitcoinExchange bitcoin;
+        bitcoin.loadDb("data.csv");
+        bitcoin.processInput(argv[1]);
     }
     catch(const std::exception& e)
     {
