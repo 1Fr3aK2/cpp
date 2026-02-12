@@ -1,6 +1,7 @@
 SRCS =  src/main.cpp \
+		src/PmergeMe.cpp \
 
-NAME = ex02
+NAME = PmergeMe
 
 COMPRESS = ar rcs
 
