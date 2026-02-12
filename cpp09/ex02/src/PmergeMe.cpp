@@ -168,11 +168,11 @@ std::vector<size_t> PmergeMe::generateJacobsthalOrder(size_t size)
 
 void PmergeMe::fordJohnsonVector(std::vector<int>& container)
 {
-    if (container.size() <= 1) return;
+    if (container.size() <= 1)
+        return;
 
     std::vector<int> mainChain;
     std::vector<int> pending;
-
     size_t i = 0;
     while (i+1 < container.size())
     {
